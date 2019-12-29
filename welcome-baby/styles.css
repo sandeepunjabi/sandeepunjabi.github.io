@@ -1,0 +1,130 @@
+/*===============
+ - GENERIC
+===============*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  background: #ffecdb;
+  color: #000;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+body {
+  padding: 0 1rem;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  color: #cd766d;
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  width: auto;
+}
+
+input,
+textarea {
+  border: 2px solid #f2b3a2;
+  box-shadow: none;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+input {
+  height: 2rem;
+}
+
+textarea {
+  height: 5rem;
+  resize: none;
+}
+
+button {
+  background: #cd766d;
+  border: none;
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+}
+
+/*===============
+ - INTRO
+===============*/
+.intro__pics {
+  border: 5px dashed #f2b3a2;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.intro__pics img {
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.intro__description {
+  margin-bottom: 0;
+}
+
+.intro__info {
+  margin-top: 0;
+}
+
+/*===============
+ - MESSENGER
+===============*/
+#messenger {
+  background: #ffecdb;
+  display: none;
+  left: 0;
+  min-height: 100%;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#messenger.open {
+  display: block;
+}
+
+.messenger__title {
+  margin-bottom: 0;
+}
+
+.messenger__description {
+  margin-top: 0;
+}
+
+form {
+  margin: auto;
+  max-width: 640px;
+}
