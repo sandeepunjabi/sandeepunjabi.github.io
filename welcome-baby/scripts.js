@@ -1,17 +1,3 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyC4tooIIlF2KujkF5ABd5wFCjhkPDT98eE",
-  authDomain: "welcome-baby.firebaseapp.com",
-  databaseURL: "https://welcome-baby.firebaseio.com",
-  projectId: "welcome-baby",
-  storageBucket: "welcome-baby.appspot.com",
-  messagingSenderId: "637910658035",
-  appId: "1:637910658035:web:ea04167a06141972778086",
-  measurementId: "G-LE51SQX4ME"
-};
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
 function toggleMessenger() {
   const messenger = document.querySelector('#messenger');
   const action = messenger.classList.contains('open') ? 'remove' : 'add';
@@ -20,3 +6,26 @@ function toggleMessenger() {
 
 const togglers = document.querySelectorAll('.toggle-messenger');
 togglers.forEach(toggler => toggler.addEventListener('click', toggleMessenger));
+
+async function sendMessage(e) {
+  e.preventDefault();
+
+  const formData = {};
+  new FormData(event.target).forEach((value, key) => {
+    formData[key] = value;
+  });
+
+  await fetch(
+    'https://us-central1-welcome-baby.cloudfunctions.net/addMessage',
+    {
+      method: 'POST',
+      body: JSON.stringify(formData)
+    }
+  );
+
+  event.target.reset();
+  toggleMessenger();
+}
+
+const form = document.querySelector('#messenger form');
+form.addEventListener('submit', sendMessage);
