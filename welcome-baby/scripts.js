@@ -10,8 +10,9 @@ togglers.forEach(toggler => toggler.addEventListener('click', toggleMessenger));
 async function sendMessage(e) {
   e.preventDefault();
 
+  const { form } = e;
   const formData = {};
-  new FormData(event.target).forEach((value, key) => {
+  new FormData(form).forEach((value, key) => {
     formData[key] = value;
   });
 
@@ -28,7 +29,7 @@ async function sendMessage(e) {
       }
     );
 
-    event.target.reset();
+    form.reset();
     toggleMessenger();
   } catch {
     alert('Could not send message. Please try again.');
