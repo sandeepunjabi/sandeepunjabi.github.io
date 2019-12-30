@@ -19,6 +19,39 @@ body {
   text-align: center;
 }
 
+body.isBusy::before {
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body.isBusy::after {
+  animation: rotate 1s linear infinite;
+  border: 5px solid #cd766d;
+  border-top-color: transparent;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20vh;
+  left: 50%;
+  margin: -10vh 0 0 -10vh;
+  position: fixed;
+  top: 50%;
+  width: 20vh;
+  z-index: 99;
+}
+
 h1,
 h2,
 h3 {

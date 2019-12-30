@@ -15,16 +15,26 @@ async function sendMessage(e) {
     formData[key] = value;
   });
 
-  await fetch(
-    'https://us-central1-welcome-baby.cloudfunctions.net/addMessage',
-    {
-      method: 'POST',
-      body: JSON.stringify(formData)
-    }
-  );
+  const body = document.querySelector('body');
 
-  event.target.reset();
-  toggleMessenger();
+  try {
+    body.classList.add('isBusy');
+
+    await fetch(
+      'https://us-central1-welcome-baby.cloudfunctions.net/addMessage',
+      {
+        method: 'POST',
+        body: JSON.stringify(formData)
+      }
+    );
+
+    event.target.reset();
+    toggleMessenger();
+  } catch {
+    alert('Could not send message. Please try again.');
+  } finally {
+    body.classList.remove('isBusy');
+  }
 }
 
 const form = document.querySelector('#messenger form');
