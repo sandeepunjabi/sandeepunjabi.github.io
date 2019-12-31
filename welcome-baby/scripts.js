@@ -39,7 +39,8 @@ async function sendMessage(e) {
 
     form.reset();
     toggleMessenger();
-    alert('Thank You...');
+
+    setTimeout(() => alert('Thank You...'), 100);
   } catch {
     alert('Could not send message. Please try again.');
   } finally {
