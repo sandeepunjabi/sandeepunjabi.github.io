@@ -1,12 +1,20 @@
+/*===============
+ - NAVIGATION
+===============*/
 function toggleMessenger() {
-  const messenger = document.querySelector('#messenger');
-  const action = messenger.classList.contains('open') ? 'remove' : 'add';
-  messenger.classList[action]('open');
+  const body = document.querySelector('body');
+  const action = body.classList.contains('messenger-visible')
+    ? 'remove'
+    : 'add';
+  body.classList[action]('messenger-visible');
 }
 
 const togglers = document.querySelectorAll('.toggle-messenger');
 togglers.forEach(toggler => toggler.addEventListener('click', toggleMessenger));
 
+/*===============
+ - MESSAGE FORM
+===============*/
 async function sendMessage(e) {
   e.preventDefault();
 

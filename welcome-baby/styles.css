@@ -134,21 +134,6 @@ button {
 /*===============
  - MESSENGER
 ===============*/
-#messenger {
-  background: #ffecdb;
-  display: none;
-  left: 0;
-  min-height: 100%;
-  padding: 0 1rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-#messenger.open {
-  display: block;
-}
-
 .messenger__title {
   margin-bottom: 0;
 }
@@ -160,4 +145,16 @@ button {
 form {
   margin: auto;
   max-width: 640px;
+}
+
+/*===============
+ - NAVIGATION
+===============*/
+body.messenger-visible #intro,
+#messenger {
+  display: none;
+}
+
+body.messenger-visible #messenger {
+  display: block;
 }
