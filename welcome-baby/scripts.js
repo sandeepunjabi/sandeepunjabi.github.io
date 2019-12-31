@@ -33,7 +33,10 @@ async function sendMessage(e) {
       'https://us-central1-welcome-baby.cloudfunctions.net/addMessage',
       {
         method: 'POST',
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
     );
 
