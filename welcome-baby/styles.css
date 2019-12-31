@@ -115,6 +115,7 @@ button {
   border: 5px dashed #f2b3a2;
   border-radius: 50%;
   display: inline-block;
+  max-width: 480px;
   padding: 0.5rem;
 }
 
