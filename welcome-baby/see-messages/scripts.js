@@ -15,7 +15,7 @@ function renderMessages(messages) {
 async function handleFormSubmit(e) {
   e.preventDefault();
 
-  const token = e.target.querySelector('input').val;
+  const token = e.target.querySelector('input').value;
   const response = fetch(
     'https://us-central1-welcome-baby.cloudfunctions.net/getMessages',
     { headers: { Authorization: `Bearer ${token}` } }
