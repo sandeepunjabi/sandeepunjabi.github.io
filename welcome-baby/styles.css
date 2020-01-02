@@ -110,6 +110,10 @@ button {
   padding: 0.5rem 1rem;
 }
 
+
+/*===============
+- SEE MESSAGES
+===============*/
 .input-with-button {
   display: flex;
 }
@@ -117,6 +121,30 @@ button {
 .input-with-button button {
   flex-shrink: 0;
   margin: 0;
+}
+
+#messages {
+  padding: 0.5rem 0;
+}
+
+#messages .message {
+  border: 5px dashed #cd766d;
+  display: inline-block;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+@media all and (min-width: 640px) {
+  #messages {
+    columns: 2;
+  }
+}
+
+@media all and (min-width: 960px) {
+  #messages {
+    columns: 3;
+  }
 }
 
 /*===============
