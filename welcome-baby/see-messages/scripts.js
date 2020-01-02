@@ -16,11 +16,11 @@ async function handleFormSubmit(e) {
   e.preventDefault();
 
   const token = e.target.querySelector('input').value;
-  const response = fetch(
+  const response = await fetch(
     'https://us-central1-welcome-baby.cloudfunctions.net/getMessages',
     { headers: { Authorization: `Bearer ${token}` } }
   );
-  const data = response.json();
+  const data = await response.json();
   renderMessages(Object.values(data));
 }
 
