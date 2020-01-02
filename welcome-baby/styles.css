@@ -105,8 +105,18 @@ button {
   background: #cd766d;
   border: none;
   display: inline-block;
+  line-height: 1;
   margin: 1rem 0;
   padding: 0.5rem 1rem;
+}
+
+.input-with-button {
+  display: flex;
+}
+
+.input-with-button button {
+  flex-shrink: 0;
+  margin: 0;
 }
 
 /*===============
